@@ -1,0 +1,49 @@
+#start terminal
+alt + Return
+  st
+
+#start programm
+alt + d 
+  dmenu_run
+
+#move window
+alt + shift + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+
+alt + shift + {Left,Right,Up,Down}
+	bspc node -s {west,east,north,south}
+
+#move focus
+alt + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+
+alt + {Up,Down,Left,Right}
+	bspc node -f {north,south,west,east}
+
+#close window
+alt + shift + q
+	bspc node -f -c
+
+# volume control
+alt + shift + {c,v}
+	amixer sset Master {2%+,2%-}
+
+#change desktop
+alt + {1-9,0}
+    bspc desktop -f '^{1-9,10}'
+
+#move window to desktop 
+alt + shift + {1-9,0}
+    bspc node -d '^{1-9,10}'
+
+#resize window
+alt + shift + r : {Up,Down}
+    {bspc node -f -z top 0 -10 ; bspc node -f -z bottom 0 -10, bspc node -f -z top 0 10 ; bspc node -f -z bottom 0 10}
+
+alt + shift + r : {Left, Right}
+    {bspc node -f -z left -10 0; bspc node -f -z right -10 0, bspc node -f -z left 10 0; bspc node -f -z right 10 0, }    
+
+#mediabuttons
+AudioPlay
+     mpc toggle
+     
